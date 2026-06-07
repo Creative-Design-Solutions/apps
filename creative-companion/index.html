@@ -425,7 +425,7 @@
     border:1px solid rgba(210,154,166,.18);
     border-radius:22px;
     padding:1.3rem 1.45rem;
-    margin-top:1.2rem;
+    margin-top:0;
     box-shadow:0 1px 0 rgba(210,154,166,.04) inset,0 18px 40px -28px rgba(0,0,0,.7);
   }
   .pluto-card::before{
@@ -806,7 +806,7 @@ function screenSpace(){
            '<div class="jup-reveal-body">'+esc(body)+(body.length>=400?'...':'')+'</div>'+
          '</div>'+
        '</div>':'';
-     return '<div class="pluto-card">'+
+     return '<div class="pluto-card" style="margin-top:.9rem">'+
        '<div class="pluto-eyebrow">Your Pluto'+(title?' — '+esc(title):'')+' </div>'+
        '<div class="pluto-theme">'+esc(calling)+'</div>'+
        '<div class="pluto-sub">This is the edge. The place your chart is asking you to walk toward.</div>'+
