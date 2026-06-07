@@ -1120,11 +1120,11 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 
 // ── Lazaro direct API (fallback when companion-server.py not running) ─────────
-var LAZARO_SYSTEM = "You are Lazaro — a quiet interpreter of the Destiny Cards. Speak directly to the person in second person. Two sentences only. No metaphysical jargon. Specific, lived, direct.";
+var LAZARO_SYSTEM = "You are Lazaro — a warm, quiet interpreter of the Destiny Cards. Speak directly to the person in second person. Two sentences only. Grounded in this specific card's nature. Compassionate and specific — never generic, never a lecture.";
 
 function lazaroPrompt(type, title, body){
   if(type==="pluto"){
-    return "Pluto card — "+title+":\n"+body+"\n\nIn exactly 2 sentences, name the specific edge this card is asking this person to walk toward — direct and true to this card’s particular quality. Then let the second sentence carry a tender quality: not softening the edge, but offering a gentle sense of where to place the next step, as if someone who deeply believes in them is pointing the way forward.";
+    return "Pluto card — "+title+":\n"+body+"\n\nIn 2 sentences, speak directly to this person from the quality of this specific card — what it naturally stirs or calls toward in them, drawn from this card's own essence rather than a label. Then: where the next breath forward might live — tender, specific, as if someone who wholly believes in them is quietly pointing the way.";
   } else {
     return "Jupiter card — "+title+":\n"+body+"\n\nIn 2 sentences, describe what this Jupiter card is already drawing toward this person and quietly breathing through them — not as guidance but as a living current they are already inside of. Write it as recognition of what is naturally flowing to them and through them from this card’s essence, without effort or instruction. Poetic, expansive, second person, specific to this card.";
   }
@@ -1144,7 +1144,7 @@ function callAnthropicDirect(key, type, title, body){
     },
     body:JSON.stringify({
       model:"claude-haiku-4-5-20251001",
-      max_tokens:140,
+      max_tokens:180,
       system:LAZARO_SYSTEM,
       messages:[{role:"user",content:lazaroPrompt(type,title,body)}]
     })
